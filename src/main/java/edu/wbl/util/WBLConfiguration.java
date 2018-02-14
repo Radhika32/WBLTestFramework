@@ -12,7 +12,7 @@ public class WBLConfiguration {
 		if(config != null) {
 			config = new WBLConfiguration();
 			Properties props = new Properties();
-			if()
+			//if()
 			
 		}
 		
