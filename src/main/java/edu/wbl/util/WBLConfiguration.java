@@ -1,4 +1,4 @@
-package src.main.java.edu.wbl.util;
+package edu.wbl.util;
 
 public class WBLConfiguration {
 	
