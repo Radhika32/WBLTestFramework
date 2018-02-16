@@ -6,7 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import edu.wbl.page.DemoPage;
+import edu.wbl.page.FAQPage;
 import edu.wbl.page.HomePage;
+import edu.wbl.page.RecordingPage;
 import edu.wbl.page.SchedulePage;
 
 public class WBLBaseObject {
@@ -18,6 +21,9 @@ public class WBLBaseObject {
     WebElement home ;
 	WebElement login;
 	WebElement schedule;
+	WebElement demo;
+	WebElement recording;
+	WebElement fqa;
 	//WebElement freeStudentAccess; 
 	//WebElement WBLPageLink;
 	
@@ -49,6 +55,24 @@ public class WBLBaseObject {
 		schedule = driver.findElement(By.xpath("//*[@id='navbar-collapse']/ul/li[2]/a"));
 		clickObj(schedule, "Schedulescreen");
 		return new SchedulePage(driver);
+	}
+	
+	public RecordingPage recordingPage() {
+		recording = driver.findElement(By.xpath("//*[@id=\'navbar-collapse\']/ul/li[4]/a"));
+		return new RecordingPage(driver);
+		
+	}
+	public DemoPage demoClick() {
+		demo = driver.findElement(By.xpath("//*[@id=\'navbar-collapse\']/ul/li[3]/a"));
+		return new DemoPage(driver);
+		
+		
+	}
+	
+	public FAQPage fqaClick() {
+		fqa = driver.findElement(By.xpath("//*[@id=\'navbar-collapse\']/ul/li[5]/a"));
+		return new FAQPage(driver);
+		
 	}
 
 	public static void enterText(WebElement obj, String textVal, String objName) throws IOException {
