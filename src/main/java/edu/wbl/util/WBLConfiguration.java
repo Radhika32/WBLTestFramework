@@ -24,6 +24,14 @@ public class WBLConfiguration {
 				case "firefox" : config.set_browser(Browser.FIREFOX);
 				                break;
 			}
+			switch(props.getProperty("device").toLowerCase()){
+				case "desktop" : config.set_device(Device.DESKTOP);
+				                break;
+				case "win10" : config.set_device(Device.WIN10);
+				                break;
+				case "apple" : config.set_device(Device.APPLE);
+				                break;
+			}	   
 		}
 		return config;
 	}
