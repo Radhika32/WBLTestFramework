@@ -2,10 +2,11 @@ package edu.wbl.base;
 
 import edu.wbl.util.WBLConfiguration;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
 
 public class BaseTest {
 
-    public Configuration config;
+    public WBLConfiguration config;
     
     
     public BaseTest() {
@@ -13,8 +14,14 @@ public class BaseTest {
     }
     
     @BeforeSuite
-    public void setUp(){
-         config = Configuration.loadConfiguration
+    public void setUp() throws Exception {
+         config = WBLConfiguration.loadConfiguration();
+        //construction of other with api, reports, logging to be done
+    }
+    
+    @AfterSuite
+    public void tearDown(){
+        config = null;
     }
 
 }
