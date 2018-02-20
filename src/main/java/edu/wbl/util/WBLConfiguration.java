@@ -1,6 +1,9 @@
 package edu.wbl.util;
 
 import java.util.Properties;
+import java.io.FileReader;
+import java.io.File;
+import java.io.IOException;
 
 public class WBLConfiguration {
 	
@@ -10,7 +13,7 @@ public class WBLConfiguration {
 	
 	private static WBLConfiguration config=null;
 	
-	public static WBLConfiguration loadConfiguration(String type) throws IOException{
+	public static WBLConfiguration loadConfiguration() throws IOException{
 		if(config != null) {
 			config = new WBLConfiguration();
 			Properties props = new Properties();
